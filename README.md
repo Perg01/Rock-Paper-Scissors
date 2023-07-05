@@ -1,0 +1,1 @@
+A basic rock-paper-scissor game with the use of javascript initally, and later adding GUI using html and css.
