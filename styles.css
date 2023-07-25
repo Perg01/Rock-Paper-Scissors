@@ -1,0 +1,17 @@
+body {
+    background-image: url(john-towner-89PFnHKg8HE-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: #FFFFFF;    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn-container {
+    display: flex;
+}

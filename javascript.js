@@ -7,64 +7,107 @@ function getComputerChoice() {
         default: return "INVALID";
     }
 }
-// console.log(getComputerChoice());
-function game() {
-    let botWins = 0;
-    let playerWins = 0;
-    let matchesDraw = 0;
-    for (let i = 0; i < 5; i++) {
-        const computerSelection = getComputerChoice();
-        const playerSelection = prompt("Rock, Paper or Scissor?").toLowerCase();
 
-        function playRound(playerSelection, computerSelection) {
-            if (!(playerSelection === "rock" || "paper" || "scissor")) {
-                return "Invalid answer! Your options are either 'rock', 'paper' or 'scissor'";
-            }
-            while (playerSelection === "rock") {
-                if (computerSelection === "Rock") {
-                    matchesDraw++;
-                    return "Draw!";
-                } else if (computerSelection === "Paper") {
-                    botWins++;
-                    return "You lose! Paper beats Rock.";
-                } else if (computerSelection === "Scissor") {
-                    playerWins++;
-                    return "You win! Rock beats Scissor.";
-                }
-            }
-            while (playerSelection === "paper") {
-                if (computerSelection === "Paper") {
-                    matchesDraw++;
-                    return "Draw!";
-                } else if (computerSelection === "Scissor") {
-                    botWins++;
-                    return "You lose! Scissor beats Paper.";
-                } else if (computerSelection === "Rock") {
-                    playerWins++;
-                    return "You win! Paper beats Rock.";
-                }
-            }
-            while (playerSelection === "scissor") {
-                if (computerSelection === "Scissor") {
-                    matchesDraw++;
-                    return "Draw!";
-                } else if (computerSelection === "Paper") {
-                    playerWins++;
-                    return "You win! Scissor beats Paper.";
-                } else if (computerSelection === "Rock") {
-                    botWins++;
-                    return "You lose! Rock beats Scissor.";
-                }
-            }
+const rockbtn = document.querySelector('#rock');
+const paperbtn = document.querySelector('#paper');
+const scissorbtn = document.querySelector('#scissor');
+const scoreboard = document.querySelector('.scoreboard');
+const p = document.createElement('div');
+const dialog = document.createElement('div');
+p.classList.toggle('score');
+dialog.classList.toggle('dialog');
+
+let botWins = 0;
+let playerWins = 0;
+let matchesDraw = 0;
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock") {
+        if (computerSelection === "Rock") {
+            matchesDraw++;
+            p.textContent = "DRAW!";
+            scoreboard.appendChild(p);
+        } else if (computerSelection === "Paper") {
+            botWins++;
+            p.textContent = "ROUND LOST! Paper beats Rock";
+            scoreboard.appendChild(p);
+
+        } else if (computerSelection === "Scissor") {
+            playerWins++;
+            p.textContent = "ROUND WON! Rock beats Scissor";
+            scoreboard.appendChild(p);
+
         }
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`Player: ${playerWins}, Bot: ${botWins}, Draws: ${matchesDraw}`);
     }
-    while (playerWins == botWins) {
-        computerSelection = getComputerChoice();
-        playerSelection = prompt("Rock, Paper or Scissor?").toLowerCase();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`Player: ${playerWins}, Bot: ${botWins}, Draws: ${matchesDraw}`);
+    else if (playerSelection === "paper") {
+        if (computerSelection === "Paper") {
+            matchesDraw++;
+            p.textContent = "DRAW!";
+            scoreboard.appendChild(p);
+        } else if (computerSelection === "Scissor") {
+            botWins++;
+            p.textContent = "ROUND LOST! Scissor beats Paper";
+            scoreboard.appendChild(p);
+        } else if (computerSelection === "Rock") {
+            playerWins++;
+            p.textContent = "ROUND WON! Paper beats Rock";
+            scoreboard.appendChild(p);
+        }
+    }
+    else if (playerSelection === "scissor") {
+        if (computerSelection === "Scissor") {
+            matchesDraw++;
+            p.textContent = "DRAW!";
+            scoreboard.appendChild(p);
+        } else if (computerSelection === "Paper") {
+            playerWins++;
+            p.textContent = "ROUND WON! Scissor beats Paper";
+            scoreboard.appendChild(p);
+        } else if (computerSelection === "Rock") {
+            botWins++;
+            p.textContent = "ROUND LOST! Rock beats Scissor";
+            scoreboard.appendChild(p);
+        }
+    }
+    dialog.textContent = `Player: ${playerWins}, Bot: ${botWins}, Draws: ${matchesDraw}`;
+    scoreboard.appendChild(dialog);
+    if (playerWins === 5) {
+        p.textContent = '';
+        dialog.textContent = 'Congrats! You Win';
+        scoreboard.appendChild(dialog);
+        scoreboard.appendChild(p);
+        playerWins = 0;
+        botWins = 0;
+        matchesDraw = 0;
+    } else if (botWins === 5) {
+        p.textContent = '';
+        dialog.textContent = 'Game Over :c';
+        scoreboard.appendChild(dialog);
+        scoreboard.appendChild(p);
+        playerWins = 0;
+        botWins = 0;
+        matchesDraw = 0;
     }
 }
-game();
+
+rockbtn.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "rock";
+    playRound(playerSelection, computerSelection);
+});
+paperbtn.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "paper";
+    playRound(playerSelection, computerSelection);
+});
+scissorbtn.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "scissor";
+    playRound(playerSelection, computerSelection);
+});
+
+
+
+
+
+
