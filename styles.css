@@ -1,17 +1,63 @@
 body {
-    background-image: url(john-towner-89PFnHKg8HE-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    color: #FFFFFF;    
+    /* background-image: url(john-towner-89PFnHKg8HE-unsplash.jpg); */
+    background-color: #ddcc99;
+    color: #FFFFFF;  
+    margin: 0;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* background-size: 100% 100%; */
+    /* display: flex;
+    justify-content: center;
+    padding: 170px; */
 }
 
-.container {
+.header {
+    padding: 5px 200px;
+    font-family: 'Games', sans-serif;
+    font-size: 25px;
+    color: dimgray;
+    background-color: rgba(15, 15, 15, 0.904);
     display: flex;
-    align-items: center;
     justify-content: center;
+}
+.scoreboard {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 1091px; */
+    height: 165px;
+}
+.score, .dialog {
+    font-family: 'Games', sans-serif;
+    color: black;
+    font-size: 40px;
+}
+.score {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.dialog {
+    padding-bottom: 20px;
+}
+.display {
+    background-color: black;
+    display: flex;
+    width: auto;
+    height: 350px;
+}
+.image {
+    /* object-fit: fill;
+    width: 1440px;
+    height: 350px; */
+    flex: 1;
 }
 .btn-container {
+    background-color: rgba(15, 15, 15, 0.904);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 157px;
+    gap: 50px;
 }
