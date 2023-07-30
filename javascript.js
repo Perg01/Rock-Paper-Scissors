@@ -25,22 +25,22 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock") {
         if (computerSelection === "Rock") {
             matchesDraw++;
-            p.textContent = "DRAW!";
+            p.textContent = "";
             image.src = "./TextPro.me_164c2f1b44e39e.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
 
         } else if (computerSelection === "Paper") {
             botWins++;
-            p.textContent = "ROUND LOST! Paper beats Rock";
+            p.textContent = "Paper beats Rock!";
             image.src = "./RoundLost!.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
 
         } else if (computerSelection === "Scissor") {
             playerWins++;
-            p.textContent = "ROUND WON! Rock beats Scissor";
-            image.src = "./RoundWon!.jpg";
+            p.textContent = "Rock beats Scissor!";
+            image.src = "./RoundWON.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
 
@@ -49,20 +49,20 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "paper") {
         if (computerSelection === "Paper") {
             matchesDraw++;
-            p.textContent = "DRAW!";
+            p.textContent = "";
             image.src = "./TextPro.me_164c2f1b44e39e.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
         } else if (computerSelection === "Scissor") {
             botWins++;
-            p.textContent = "ROUND LOST! Scissor beats Paper";
+            p.textContent = "Scissor beats Paper!";
             image.src = "./RoundLost!.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
         } else if (computerSelection === "Rock") {
             playerWins++;
-            p.textContent = "ROUND WON! Paper beats Rock";
-            image.src = "./RoundWon!.jpg";
+            p.textContent = "Paper beats Rock!";
+            image.src = "./RoundWON.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
         }
@@ -70,19 +70,19 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "scissor") {
         if (computerSelection === "Scissor") {
             matchesDraw++;
-            p.textContent = "DRAW!";
+            p.textContent = "";
             image.src = "./TextPro.me_164c2f1b44e39e.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
         } else if (computerSelection === "Paper") {
             playerWins++;
-            p.textContent = "ROUND WON! Scissor beats Paper";
-            image.src = "./RoundWon!.jpg";
+            p.textContent = "Scissor beats Paper!";
+            image.src = "./RoundWON.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);
         } else if (computerSelection === "Rock") {
             botWins++;
-            p.textContent = "ROUND LOST! Rock beats Scissor";
+            p.textContent = "Rock beats Scissor!";
             image.src = "./RoundLost!.jpg";
             display.appendChild(image);
             scoreboard.appendChild(p);

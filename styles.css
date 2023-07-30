@@ -1,6 +1,6 @@
 body {
     /* background-image: url(john-towner-89PFnHKg8HE-unsplash.jpg); */
-    background-color: #ddcc99;
+    background-color: #171e2e;
     color: #FFFFFF;  
     margin: 0;
     /* background-repeat: no-repeat; */
@@ -15,8 +15,8 @@ body {
     padding: 5px 200px;
     font-family: 'Games', sans-serif;
     font-size: 25px;
-    color: dimgray;
-    background-color: rgba(15, 15, 15, 0.904);
+    color: #0056db;
+    background-color: #0e1525;
     display: flex;
     justify-content: center;
 }
@@ -30,7 +30,8 @@ body {
 }
 .score, .dialog {
     font-family: 'Games', sans-serif;
-    color: black;
+    /* color: #004182; */
+    color: #3186d4;
     font-size: 40px;
 }
 .score {
@@ -42,22 +43,36 @@ body {
     padding-bottom: 20px;
 }
 .display {
-    background-color: black;
+    background-color: #171e2e;
     display: flex;
     width: auto;
     height: 350px;
 }
 .image {
-    /* object-fit: fill;
-    width: 1440px;
-    height: 350px; */
     flex: 1;
 }
 .btn-container {
-    background-color: rgba(15, 15, 15, 0.904);
+    background-color: #0e1525;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 157px;
     gap: 50px;
+}
+button {
+    padding: 20px 40px;
+    border-width: 3px;
+    border-radius: 10px;
+    background-color: #3186d4;
+    box-shadow: 0 0 5px #3186d4,
+    0 0 25px #3186d4;
+    border-color: #3186d4;
+}
+button:hover {
+    box-shadow: 0 0 5px #3186d4,
+    0 0 25px #3186d4, 0 0 50px #3186d4,
+    0 0 100px #3186d4, 0 0 200px #3186d4;
+}
+#rock, #paper, #scissor {
+    font-size: 40px;
 }
