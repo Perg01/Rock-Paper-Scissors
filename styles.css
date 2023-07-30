@@ -1,14 +1,8 @@
 body {
-    /* background-image: url(john-towner-89PFnHKg8HE-unsplash.jpg); */
     background-color: #171e2e;
     color: #FFFFFF;  
     margin: 0;
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: 100% 100%; */
-    /* display: flex;
-    justify-content: center;
-    padding: 170px; */
+    
 }
 
 .header {
@@ -25,12 +19,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 1091px; */
     height: 165px;
 }
 .score, .dialog {
     font-family: 'Games', sans-serif;
-    /* color: #004182; */
     color: #3186d4;
     font-size: 40px;
 }
